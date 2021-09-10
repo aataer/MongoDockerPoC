@@ -15,7 +15,7 @@ namespace ESourcing.Products.Repositories
 
         public ProductRepository(IProductContext context)
         {
-            context = _context;
+            _context = context;
         }
         public async Task Create(Product product)
         {

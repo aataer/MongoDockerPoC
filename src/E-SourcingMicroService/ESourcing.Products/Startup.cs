@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ESourcing.Products.Data;
 using ESourcing.Products.Data.Interfaces;
+using ESourcing.Products.Repositories;
 using ESourcing.Products.Repositories.Interfaces;
 using ESourcing.Products.Settings;
 using Microsoft.AspNetCore.Builder;
@@ -35,8 +37,8 @@ namespace ESourcing.Products
 
             services.Configure<ProductDatabaseSettings>(Configuration.GetSection(nameof(ProductDatabaseSettings)));
             services.AddSingleton<IProductDatabaseSettings>(sp => sp.GetRequiredService<IOptions<ProductDatabaseSettings>>().Value);
-            services.AddTransient<IProductRepository, IProductRepository>();
-            services.AddTransient<IProductContext, IProductContext>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IProductContext, ProductContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,8 +47,6 @@ namespace ESourcing.Products
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ESourcing.Products v1"));
             }
 
             app.UseHttpsRedirection();
