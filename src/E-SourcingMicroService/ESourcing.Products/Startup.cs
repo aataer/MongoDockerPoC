@@ -33,12 +33,28 @@ namespace ESourcing.Products
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
 
+            #region Configuration Dependencies
             services.Configure<ProductDatabaseSettings>(Configuration.GetSection(nameof(ProductDatabaseSettings)));
             services.AddSingleton<IProductDatabaseSettings>(sp => sp.GetRequiredService<IOptions<ProductDatabaseSettings>>().Value);
+
+            #endregion
+            #region project dependencies
             services.AddTransient<IProductRepository, ProductRepository>();
+
             services.AddTransient<IProductContext, ProductContext>();
+            #endregion
+            services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "POC Product Sourcing",
+                    Version = "v1"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +63,8 @@ namespace ESourcing.Products
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ESourcing.Products v1"));
             }
 
             app.UseHttpsRedirection();
