@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hZuoYaqigQXnTP4rFUa3o+yJ06A6k1tD7xNKPYiZKvVGiWmhkoXgWd/v9og0QmCuBERTFBWELupvad9Vl1+0CA==",
+  "dgSpecHash": "iyEuXVJE2zpzIkP/9+9AjSqwu7XSCo0QPON4AEE7FYDPN9dSjSWVLyTnKLVHj2L2FJXWwmWXqEgoHxs6ZQfRkA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Documents\\Projects\\Projects\\POCMongoDocker\\src\\E-SourcingMicroService\\ESourcing.Products\\ESourcing.Products.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.openapi\\1.1.1\\microsoft.openapi.1.1.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\mongodb.bson\\2.13.1\\mongodb.bson.2.13.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\mongodb.driver\\2.13.1\\mongodb.driver.2.13.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\mongodb.driver.core\\2.13.1\\mongodb.driver.core.2.13.1.nupkg.sha512",
